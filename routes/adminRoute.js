@@ -4,6 +4,7 @@ const router = express.Router();
 
 const ctrl = new adminController();
 
+router.get('/', ctrl.adminView);
 router.get('/montar', ctrl.montarLancheView);
 
 module.exports = router;

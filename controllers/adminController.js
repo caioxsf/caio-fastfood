@@ -42,6 +42,10 @@ class adminController {
         res.render("private/montar-lanche/montar-lanche", {listaBacon, listaCarnes, listaCebola, listaMolho, listaOvo, listaPaes, listaQueijos, listaTomate, listaVerduraLegumes})
     }
 
+    async adminView(req,res) {
+        res.render('private/tela-admin/admin')
+    }
+
 
 
 }
