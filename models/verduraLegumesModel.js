@@ -22,8 +22,8 @@ class verduraLegumesModel {
         for(let i=0;i<colunas.length;i++) {
             let coluna = colunas[i];
             lista.push(new verduraLegumesModel (
-                coluna['ve_id'],
-                coluna['ve_nome']
+                coluna['ver_id'],
+                coluna['ver_nome']
             ))
         }
 

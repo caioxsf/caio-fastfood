@@ -1,11 +1,326 @@
-<select name="" id="">
-    <% for(let i=0;i<listaBacon.length;i++) { %>
-        <option value=""><%= listaBacon[i].nome %></option>
-    <%}%>
-</select>
+<div class="font-primary flex justify-center flex-col m-auto  h-200 overflow-y-auto p-5">
+    <h1 class="text-4xl font-fastfood text-center">Caio fast<span class="text-indigo-500">food</span></h1>
+    <p class="text-center text-md">Montar lanche <span class="text-indigo-500">personalizado</span></p>
 
-<select name="" id="">
-    <% for(let i=0;i<listaCarnes.length;i++) { %>
-        <option value=""><%= listaCarnes[i].nome %></option>
-    <%}%>
-</select>
+    <div class="h-150 overflow-y-auto shadow-sm p-10 mt-5 rounded-lg">
+
+        <div class="w-full max-w-sm min-w-[200px] mb-5">
+            <label for="" class="block mb-1 text-sm text-slate-800">Nome</label>
+            <input class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Nome do lanche...">
+          </div>
+
+        <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Pão
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaPaes.length;i++) { %>
+                    <option value="<%= listaPaes[i].id %>"><%= listaPaes[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Hamburguer
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaCarnes.length;i++) { %>
+                    <option value="<%= listaCarnes[i].id %>"><%= listaCarnes[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Queijos
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaQueijos.length;i++) { %>
+                    <option value="<%= listaQueijos[i].id %>"><%= listaQueijos[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Ovo
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaOvo.length;i++) { %>
+                    <option value="<%= listaOvo[i].id %>"><%= listaOvo[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Bacon
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaBacon.length;i++) { %>
+                    <option value="<%= listaBacon[i].id %>"><%= listaBacon[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Cebola
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaCebola.length;i++) { %>
+                    <option value="<%= listaCebola[i].id %>"><%= listaCebola[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+    
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Tomate
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaTomate.length;i++) { %>
+                    <option value="<%= listaTomate[i].id %>"><%= listaTomate[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Molho
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaMolho.length;i++) { %>
+                    <option value="<%= listaMolho[i].id %>"><%= listaMolho[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+
+          <div class="w-full max-w-sm min-w-[200px] mb-5">    
+            <label class="block mb-1 text-sm text-slate-800">
+              Verduras
+            </label>
+           
+            <div class="relative">
+              <select
+                  class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+                  <option value="0"></option>
+                  <% for(let i=0;i<listaVerduraLegumes.length;i++) { %>
+                    <option value="<%= listaVerduraLegumes[i].id %>"><%= listaVerduraLegumes[i].nome %></option>
+                <%}%>
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+              </svg>
+            </div>
+            <p class="flex items-center mt-2 text-xs text-slate-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Caso não queira essa opção, selecione o espaço vazio.
+            </p>
+          </div>
+
+
+    </div>
+
+    <div class="flex flex-row justify-between m-3 items-center">
+        <a href="/admin">Voltar</a>
+        <button type="button" class="p-2 bg-indigo-500 text-white rounded-md cursor-pointer ">Criar lanche</button>
+    </div>
+</div>
+
