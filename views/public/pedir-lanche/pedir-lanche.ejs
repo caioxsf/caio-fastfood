@@ -1,1 +1,94 @@
- 
+<div class="font-primary">
+    <h1 class="text-4xl font-fastfood text-center">Caio fast<span class="text-indigo-500">food</span></h1>
+    <h1 class="text-center mb-3 mt-3 text-xl">Faça seu pedido!</h1>
+  
+    <form class="flex justify-center flex-col items-center gap-3">
+      <div class="w-full max-w-sm min-w-[200px]">
+        <label class="block mb-2 text-sm text-slate-600">Nome..</label>
+        <input
+          class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+        />
+      </div>
+  
+      <div class="w-full max-w-sm min-w-[200px]">
+        <label class="block mb-2 text-sm text-slate-600">Mesa..</label>
+        <select
+          class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+        >
+          <option value="0" disabled selected>Selecione uma opção</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+  
+      <div class="w-full max-w-sm min-w-[200px] mt-3 max-h-40 overflow-y-auto">
+        <div class="flex items-center justify-between shadow-sm rounded-md mb-3">
+          <span class="text-sm font-normal mx-3">X-SALADA</span>
+          <div class="flex items-center gap-3 bg-zinc-200 rounded-lg">
+            <button class="w-8 h-8 flex items-center bg-zinc-300 justify-center transition duration-200 rounded-l-lg decrement">-</button>
+            <span class="text-sm font-normal counter">0</span>
+            <button class="w-8 h-8 flex items-center bg-zinc-300 justify-center transition duration-200 rounded-r-lg increment">+</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between shadow-sm rounded-md mb-3">
+            <span class="text-sm font-normal mx-3">X-SALADA</span>
+            <div class="flex items-center gap-3 bg-zinc-200 rounded-lg">
+              <button class="w-8 h-8 flex items-center bg-zinc-300 justify-center transition duration-200 rounded-l-lg decrement">-</button>
+              <span class="text-sm font-normal counter">0</span>
+              <button class="w-8 h-8 flex items-center bg-zinc-300 justify-center transition duration-200 rounded-r-lg increment">+</button>
+            </div>
+          </div>
+
+          
+      </div>
+      
+
+      <div class="w-96">
+        <div class="relative w-full min-w-[200px]">
+          <textarea
+            class="peer h-full min-h-[100px] w-full resize-none rounded-[7px] border border-gray-200 shadow-sm border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 placeholder-shown:border-t-gray-200 focus:border-2 focus:border-gray-300 focus:border-t-transparent focus:outline-0 disabled:resize-none disabled:border-0 disabled:bg-gray-50"
+            placeholder=" "></textarea>
+          <label
+            class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-gray-300 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-gray-300 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-gray-500">
+            Observação
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-between items-center w-96">
+        <a href="/">Voltar</a>
+        <button type="button" class="bg-indigo-500 text-white p-2 rounded-xl cursor-pointer hover:bg-indigo-600 transition ease-in-out" >Enviar pedido</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.querySelectorAll(".increment").forEach(button => {
+        button.addEventListener("click", () => {
+            event.preventDefault();
+            let counter = button.parentElement.querySelector(".counter");
+            counter.textContent = parseInt(counter.textContent) + 1;
+        });
+        
+    });
+
+    document.querySelectorAll(".decrement").forEach(button => {
+        button.addEventListener("click", () => {
+            event.preventDefault();
+            let counter = button.parentElement.querySelector(".counter");
+            let count = parseInt(counter.textContent);
+            if (count > 0) {
+                counter.textContent = count - 1;
+            }
+        });
+    });
+  </script>

@@ -5,5 +5,6 @@ const router = express.Router();
 const ctrl = new inicioController();
 
 router.get('/', ctrl.inicioView);
+router.get('/pedir', ctrl.pedirView);
 
 module.exports = router;

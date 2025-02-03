@@ -4,6 +4,10 @@ class inicioController {
         res.render('public/inicio')
     }
 
+    pedirView(req,res) {
+        res.render('public/pedir-lanche/pedir-lanche')
+    }
+
 }
 
 module.exports = inicioController;
