@@ -1,4 +1,7 @@
+<script src="/js/montar-lanche/montar-lanche.js"></script>
+
 <div class="font-primary flex justify-center flex-col m-auto  h-200 overflow-y-auto p-5">
+
     <h1 class="text-4xl font-fastfood text-center">Caio fast<span class="text-indigo-500">food</span></h1>
     <p class="text-center text-md">Montar lanche <span class="text-indigo-500">personalizado</span></p>
 
@@ -6,7 +9,7 @@
 
         <div class="w-full max-w-sm min-w-[200px] mb-5">
             <label for="" class="block mb-1 text-sm text-slate-800">Nome</label>
-            <input class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Nome do lanche...">
+            <input id="nome" name="nome" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Nome do lanche...">
           </div>
 
         <div class="w-full max-w-sm min-w-[200px] mb-5">    
@@ -15,9 +18,10 @@
             </label>
            
             <div class="relative">
-              <select
+              <select 
+                  id="pao" name="pao"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaPaes.length;i++) { %>
                     <option value="<%= listaPaes[i].id %>"><%= listaPaes[i].nome %></option>
                 <%}%>
@@ -50,8 +54,9 @@
            
             <div class="relative">
               <select
+                id="hamb" name="hamb"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaCarnes.length;i++) { %>
                     <option value="<%= listaCarnes[i].id %>"><%= listaCarnes[i].nome %></option>
                 <%}%>
@@ -84,8 +89,9 @@
            
             <div class="relative">
               <select
+              id="queijo" name="queijo"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaQueijos.length;i++) { %>
                     <option value="<%= listaQueijos[i].id %>"><%= listaQueijos[i].nome %></option>
                 <%}%>
@@ -118,8 +124,9 @@
            
             <div class="relative">
               <select
+              id="ovo" name="ovo"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaOvo.length;i++) { %>
                     <option value="<%= listaOvo[i].id %>"><%= listaOvo[i].nome %></option>
                 <%}%>
@@ -152,8 +159,9 @@
            
             <div class="relative">
               <select
+              id="bacon" name="bacon"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaBacon.length;i++) { %>
                     <option value="<%= listaBacon[i].id %>"><%= listaBacon[i].nome %></option>
                 <%}%>
@@ -186,8 +194,9 @@
            
             <div class="relative">
               <select
+              id="cebola" name="cebola"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaCebola.length;i++) { %>
                     <option value="<%= listaCebola[i].id %>"><%= listaCebola[i].nome %></option>
                 <%}%>
@@ -220,8 +229,9 @@
            
             <div class="relative">
               <select
+              id="tomate" name="tomate"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaTomate.length;i++) { %>
                     <option value="<%= listaTomate[i].id %>"><%= listaTomate[i].nome %></option>
                 <%}%>
@@ -254,8 +264,9 @@
            
             <div class="relative">
               <select
+              id="molho" name="molho"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaMolho.length;i++) { %>
                     <option value="<%= listaMolho[i].id %>"><%= listaMolho[i].nome %></option>
                 <%}%>
@@ -288,8 +299,9 @@
            
             <div class="relative">
               <select
+              id="verdura" name="verdura"
                   class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                  <option value="0"></option>
+                  
                   <% for(let i=0;i<listaVerduraLegumes.length;i++) { %>
                     <option value="<%= listaVerduraLegumes[i].id %>"><%= listaVerduraLegumes[i].nome %></option>
                 <%}%>
@@ -315,12 +327,11 @@
             </p>
           </div>
 
-
     </div>
 
     <div class="flex flex-row justify-between m-3 items-center">
         <a href="/admin">Voltar</a>
-        <button type="button" class="p-2 bg-indigo-500 text-white rounded-md cursor-pointer ">Criar lanche</button>
+        <button type="button" id="botao" class="p-2 bg-indigo-500 text-white rounded-md cursor-pointer ">Criar lanche</button>
     </div>
 </div>
 

@@ -2,6 +2,7 @@ const baconModel = require("../models/baconModel");
 const carnesModel = require("../models/carnesModel");
 const cebolaModel = require("../models/cebolaModel");
 const molhoModel = require("../models/molhoModel");
+const montarLancheModel = require("../models/montarLancheModel");
 const ovoModel = require("../models/ovoModel");
 const paesModel = require("../models/paesModel");
 const queijosModel = require("../models/queijosModel");
@@ -40,6 +41,31 @@ class adminController {
         let listaVerduraLegumes = await verduraLegumes.listarVerduraLegumes();
 
         res.render("private/montar-lanche/montar-lanche", {listaBacon, listaCarnes, listaCebola, listaMolho, listaOvo, listaPaes, listaQueijos, listaTomate, listaVerduraLegumes})
+    }
+
+    async montarLanchePost (req,res) {
+        let ok;
+        if(req.body.pao) {
+            let montarLanche = new montarLancheModel();
+            montarLanche.nome = req.body.nome;
+            montarLanche.paes = req.body.pao;
+            montarLanche.carnes = req.body.hamb;
+            montarLanche.queijos = req.body.queijo;
+            montarLanche.ovo = req.body.ovo;
+            montarLanche.bacon = req.body.bacon;
+            montarLanche.cebola = req.body.cebola;
+            montarLanche.tomate = req.body.tomate;
+            montarLanche.molhos = req.body.molho;
+            montarLanche.verduras_legumes = req.body.verdura;
+
+            let resultado = await montarLanche.montarLanche();
+            if(resultado) {
+                res.send({ok: true, msg: 'Lanche montado com sucesso!'})
+            }
+            else {
+                res.send({ok: false, msg: 'Erro ao montar lanche!'})
+            }
+        }
     }
 
     async adminView(req,res) {

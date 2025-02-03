@@ -47,7 +47,37 @@ class montarLancheModel {
     get tomate () {return this.#tomate} set tomate (value) {this.#tomate = value}
     get verduras_legumes () {return this.#verduras_legumes} set verduras_legumes (value) {this.#verduras_legumes = value}
 
-    
+    async montarLanche () {
+        let sql = `insert into lanches (lan_nome, bacon, carnes, cebola, molhos, ovo, paes, queijos, tomate, verduras_legumes) values (?,?,?,?,?,?,?,?,?,?)`
+        let valores = [this.#nome, this.#bacon, this.#carnes, this.#cebola, this.#molhos, this.#ovo, this.#paes, this.#queijos, this.#tomate, this.#verduras_legumes];
+        let resultado = await db.ExecutaComandoNonQuery(sql,valores);
+        return resultado;
+    }
+
+    async listarLanches () {
+        let sql = `select * from lanches`;
+        let lista = [];
+
+        let colunas = await db.ExecutaComando(sql);
+        for(let i=0;i<colunas.length;i++) {
+            let coluna = colunas[i];
+            lista.push(new montarLancheModel (
+                coluna['lan_id'],
+                coluna['lan_nome'],
+                coluna['bacon'],
+                coluna['carnes'],
+                coluna['cebola'],
+                coluna['molhos'],
+                coluna['ovo'],
+                coluna['paes'],
+                coluna['queijos'],
+                coluna['tomate'],
+                coluna['verduras_legumes']
+            ))
+        }
+
+        return lista;
+    }
 
 }
 
