@@ -1,12 +1,18 @@
+const montarLancheModel = require("../models/montarLancheModel");
+
 class inicioController {
 
     inicioView(req,res) {
         res.render('public/inicio')
     }
 
-    pedirView(req,res) {
-        res.render('public/pedir-lanche/pedir-lanche')
+    async pedirView(req,res) {
+        let lanchesModel = new montarLancheModel();
+        let listaLanches = await lanchesModel.listarLanches();
+
+        res.render('public/pedir-lanche/pedir-lanche', {listaLanches});
     }
+    
 
 }
 
