@@ -1,0 +1,35 @@
+<div class="flex flex-col justify-center text-center">
+    <h1 class="text-4xl font-fastfood">Caio fast<span  class="text-indigo-500">food</span> </h1>
+    <p class="font-primary mt-2 text-lg">Bem-vindo(a) ao seu <span class="text-indigo-500">cardapio</span> virtual!</p>
+    <a href="/" class="font-primary text-m">Voltar a tela de inicio</a>
+
+    <div class="h-150 p-5 overflow-y-auto">
+
+        <% for(let i=0;i<listaLanches.length;i++) { %>
+            <div class="flex flex-row items-center justify-between shadow-sm p-1 rounded-sm bg-zinc-50 mb-3">
+                <div class="text-start">
+                    <p class="relative top-1"><strong><%= listaLanches[i].nome %></strong></p>
+                    <!-- Como eu usei a mesma model, o constructor ficou com o mesmo nome, por isso vai ficar mesmo confunso. 
+                        para listar os ingredientes, o nome das variaveris é os mesmo dos constructor -->
+                     
+                        <% let ingredientes = [];
+
+                        [listaIngredientes[i].id, listaIngredientes[i].nome, listaIngredientes[i].bacon, 
+                        listaIngredientes[i].carnes, listaIngredientes[i].cebola, listaIngredientes[i].molhos, 
+                        listaIngredientes[i].ovo, listaIngredientes[i].paes].forEach(valor => {
+                            if (valor && valor.toString().trim() !== "") {
+                                ingredientes.push(valor);
+                            }
+                        }); %>
+                    
+                        <span class="text-gray-500 text-xs relative bottom-1">
+                            <%= ingredientes.join(", ") %>
+                        </span>
+                </div>
+                <div>
+                    <span><strong>R$</strong> 25,00</span>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>

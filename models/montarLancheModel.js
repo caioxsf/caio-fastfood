@@ -79,6 +79,37 @@ class montarLancheModel {
         return lista;
     }
 
+    async listarIngredientes () {
+        let sql = `select bac_nome, car_nome, ce_nome, mo_nome, ovo_nome, paes_nome, que_nome, to_nome, ver_nome from lanches lan inner join bacon bac on lan.bacon = bac_id
+        inner join carnes car on lan.carnes = car_id
+        inner join cebola ce on lan.cebola = ce_id
+        inner join molhos mo on lan.molhos = mo_id
+        inner join ovo ovo on lan.ovo = ovo_id
+        inner join paes paes on lan.paes = paes_id
+        inner join queijos que on lan.queijos = que_id
+        inner join tomate tom on lan.tomate = to_id
+        inner join verduras_legumes ver on lan.verduras_legumes = ver_id`;
+        let lista = [];
+
+        let colunas = await db.ExecutaComando(sql);
+        for(let i=0;i<colunas.length;i++) {
+            let coluna = colunas[i];
+            lista.push(new montarLancheModel (
+                coluna['bac_nome'],
+                coluna['car_nome'],
+                coluna['ce_nome'],
+                coluna['mo_nome'],
+                coluna['ovo_nome'],
+                coluna['paes_nome'],
+                coluna['que_nome'],
+                coluna['to_nome'],
+                coluna['ver_nome']
+            ))
+        }
+
+        return lista;
+    }
+
 }
 
 module.exports = montarLancheModel
